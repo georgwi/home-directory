@@ -1,0 +1,12 @@
+/*
+
+!.gitignore
+!.bashrc
+
+!/.config
+/.config/*
+!/.config/i3
+
+!/.local
+/.local/*
+!/.local/bin
