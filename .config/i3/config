@@ -157,6 +157,7 @@ bar {
 
 exec --no-startup-id /home/georg/.config/i3/monitors.sh
 exec --no-startup-id nm-applet
+exec --no-startup-id feh --bg-tile ~/.config/i3/microgreens.JPG
 
 bindsym Ctrl+Mod1+l exec i3lock -c 333333
 bindsym Print exec gnome-screenshot --interactive
