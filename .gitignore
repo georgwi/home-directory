@@ -2,6 +2,7 @@
 
 !.gitignore
 !.bashrc
+!.gitconfig
 
 !/.config
 /.config/*

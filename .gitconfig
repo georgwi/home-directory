@@ -1,0 +1,7 @@
+[user]
+	name = Georg Wiedebach
+	email = gwiedebach@ihmc.us
+[gc]
+	autoDetach = false
+[pull]
+	rebase = true
