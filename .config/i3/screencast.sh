@@ -6,7 +6,7 @@ OUTPUT="$OUTPUT_DIR$(date +%F-%H-%M-%S)"
 mkdir -p "$OUTPUT_DIR"
 
 read -r X Y W H G ID < <(slop -f "%x %y %w %h %g %i")
-ffmpeg -f x11grab -s "$W"x"$H" -i :1+$X,$Y "$TMPFILE"
+ffmpeg -f x11grab -s "$W"x"$H" -i $DISPLAY+$X,$Y "$TMPFILE"
 
 notify-send 'generating palette'
 ffmpeg -y -i "$TMPFILE"  -vf fps=10,palettegen /tmp/palette.png
