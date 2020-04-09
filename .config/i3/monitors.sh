@@ -4,17 +4,17 @@ echo Found $monitors monitors.
 
 if [ "$monitors" == "3" ]
 then
-   xrandr --auto --output DP-2 --primary
-
-   # For some reason after bootup with the docking station there seem to be two possible configurations:
-   setup1=`xrandr | grep "DP-0.2 connected" | wc -l`
-   if [ "$setup1" == "1" ]
-   then
-      xrandr --auto --output DP-0.2 --left-of DP-2
-      xrandr --auto --output DP-1.1 --left-of DP-0.2
-   else
-      xrandr --auto --output DP-1.2 --left-of DP-2
-      xrandr --auto --output DP-0.1 --left-of DP-1.2
-   fi
+   xrandr --output DP-2 --auto --primary
+   xrandr --output HDMI-0 --auto --left-of DP-2 --rotate left
+   xrandr --output DP-0 --auto --left-of HDMI-0 --rotate left
+   # This alligns the laptop monitor such that is is at the bottom of the middle large screen
+   xrandr --output DP-2 --pos 2880x1480
 fi
 
+if [ "$monitors" == "2" ]
+then
+   xrandr --output DP-2 --auto --primary
+   xrandr --output HDMI-0 --auto --right-of DP-2
+   # This alligns the laptop monitor for the two monitor setup for work from home
+   xrandr --output DP-2 --pos 0x300
+fi
